@@ -19,7 +19,7 @@ const addNoteHandler = (request, h) => {
   if (isSuccess) {
     const response = h.response({
       status: 'success',
-      message: 'Catatan berhasil ditambahkan',
+      message: 'Note successfully added',
       data: {
         noteId: id,
       },
@@ -29,7 +29,7 @@ const addNoteHandler = (request, h) => {
   }
   const response = h.response({
     status: 'fail',
-    message: 'Catatan gagal ditambahkan',
+    message: 'Failed to add note',
   });
   response.code(500);
   return response;
@@ -48,7 +48,7 @@ const getNoteByIdHandler = (request, h) => {
 
     if(note !== undefined) {
         const response = h.response({
-            status: 'suceess',
+            status: 'success',
             data: {
                 note,
             },
